@@ -1,6 +1,6 @@
 """это первое задание лаб работы 1"""
 
 
-def text(message):
+def text():
     """это первая функция первого задания лаб работы 1"""
-    return message
+    return "message"
