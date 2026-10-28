@@ -35,9 +35,7 @@ def decrypt_vigenere(ciphertext: str, keyword: str) -> str:
     'ATTACKATDAWN'
     """
     plaintext = ""
-    keyword = (keyword * (len(ciphertext) // len(keyword) + 1))[
-        : len(ciphertext)
-    ].lower()
+    keyword = (keyword * (len(ciphertext) // len(keyword) + 1))[: len(ciphertext)].lower()
     for a, b in zip(ciphertext, keyword.lower()):
         base = ord("A") if a.isupper() else ord("a")
         shift = ord(b) - ord("a")

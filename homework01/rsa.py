@@ -1,4 +1,5 @@
-""" RSA implementation """
+"""RSA implementation"""
+
 import random
 import typing as tp
 
@@ -61,9 +62,7 @@ def multiplicative_inverse(e: int, phi: int) -> int:
     return old_x
 
 
-def generate_keypair(
-    p: int, q: int
-) -> tp.Tuple[tp.Tuple[int, int], tp.Tuple[int, int]]:
+def generate_keypair(p: int, q: int) -> tp.Tuple[tp.Tuple[int, int], tp.Tuple[int, int]]:
     """
     Generates a keypair for the RSA algorithm
     """
@@ -93,7 +92,7 @@ def generate_keypair(
 
 def encrypt(pk: tp.Tuple[int, int], plaintext: str) -> tp.List[int]:
     """
-        RSA encryption function
+    RSA encryption function
     """
     # Unpack the key into it's components
     key, n = pk
