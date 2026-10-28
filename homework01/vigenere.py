@@ -1,4 +1,6 @@
 """функции для кодирования и декодирования шифра Виженере"""
+
+
 def encrypt_vigenere(plaintext: str, keyword: str) -> str:
     """
     Encrypts plaintext using a Vigenere cipher.
@@ -10,12 +12,12 @@ def encrypt_vigenere(plaintext: str, keyword: str) -> str:
     'LXFOPVEFRNHR'
     """
     ciphertext = ""
-    keyword = (keyword * (len(plaintext)//len(keyword) + 1))[:len(plaintext)].lower()
-    for a,b in zip(plaintext, keyword.lower()):
+    keyword = (keyword * (len(plaintext) // len(keyword) + 1))[: len(plaintext)].lower()
+    for a, b in zip(plaintext, keyword.lower()):
         base = ord("A") if a.isupper() else ord("a")
         shift = ord(b) - ord("a")
         if a.isalpha():
-            ciphertext += chr(base + (ord(a) - base + shift)%26)
+            ciphertext += chr(base + (ord(a) - base + shift) % 26)
         else:
             ciphertext += a
 
@@ -33,7 +35,9 @@ def decrypt_vigenere(ciphertext: str, keyword: str) -> str:
     'ATTACKATDAWN'
     """
     plaintext = ""
-    keyword = (keyword * (len(ciphertext) // len(keyword) + 1))[:len(ciphertext)].lower()
+    keyword = (keyword * (len(ciphertext) // len(keyword) + 1))[
+        : len(ciphertext)
+    ].lower()
     for a, b in zip(ciphertext, keyword.lower()):
         base = ord("A") if a.isupper() else ord("a")
         shift = ord(b) - ord("a")
