@@ -3,7 +3,6 @@
 import random
 import typing as tp
 
-
 def is_prime(n: int) -> bool:
     """
     Tests to see if a number is prime.
@@ -14,9 +13,7 @@ def is_prime(n: int) -> bool:
     >>> is_prime(8)
     False
     """
-    if n < 2:
-        return False
-    if n < 4:
+    if 2 <= n < 4:
         return True
     if n % 2 == 0 or n % 3 == 0:
         return False
