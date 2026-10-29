@@ -16,7 +16,7 @@ def is_prime(n: int) -> bool:
     """
     if 2 <= n < 4:
         return True
-    if n % 2 == 0 or n % 3 == 0:
+    if n < 2 n % 2 == 0 or n % 3 == 0:
         return False
     i = 5
     while i < n ** (1 / 2):
